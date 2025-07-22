@@ -1,0 +1,1 @@
+export const DB_NAME = "videotube" // isko .env mai isliye nhi dala kyu ki ye koee system specifc variable nhi hai, ye bas application ki db ka naam hai
