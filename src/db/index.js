@@ -7,7 +7,7 @@ const connectDB = async () => {
         console.log(`\n MongoDB Connected !! DB HOST : ${connectionInstance.connection.host}`); // will give the name ki sahi db connect hua hai na
     } catch(error){
         console.log("MongoDB connection Error : ",error);
-        process.exit(1) 
+        process.exit(1) // immediately iss process ko rokhne ke liye
     }
 }
 
