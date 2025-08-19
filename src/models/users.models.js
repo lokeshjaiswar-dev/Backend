@@ -51,11 +51,11 @@ const userSchema = new Schema(
 // userSchema.pre("save",() => {}) // not recommended to write arrow function in it bcoz it doesn't have access to this keyword
 
 // password encrypt karne ke liye 
-userSchema.pre("save", async function(){
+userSchema.pre("save", async function(next){
 
     if(!this.isModified("password")) return next() // agar modified nhi hua hai toh return ho jao
 
-    this.password = bcrypt.hash(this.password,10) // kispe lagana hai wo aur kitne hash rounds 
+    this.password = await bcrypt.hash(this.password,10) // kispe lagana hai wo aur kitne hash rounds 
     next()
 
 }) // it will take sometime therefore async function and since it is middle ware we have to give the flag to the next middleware using next()
